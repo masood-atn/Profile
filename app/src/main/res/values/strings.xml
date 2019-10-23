@@ -2,4 +2,13 @@
     <string name="app_name">Profile</string>
     <string name="profile">Profile</string>
     <string name="dial">Dial</string>
+    <string name="age">Age</string>
+    <string name="email">Email</string>
+    <string name="last_name">Last Name</string>
+    <string name="first_name">First Name</string>
+    <string name="review">Review</string>
+    <string name="confirm">Confirm</string>
+    <string name="edit">Edit</string>
+    <string name="confirmation_text">Please confirm your information:</string>
+    <string name="empty">Empty</string>
 </resources>

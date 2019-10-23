@@ -20,9 +20,7 @@
             android:background="@color/colorBlue"
             android:text="@string/profile"
             android:textColor="#FFF"
-            android:textSize="20sp"
-
-            />
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/btnDial"
