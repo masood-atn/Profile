@@ -12,10 +12,13 @@ import android.widget.TextView;
 
 public class ProfileReviewActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_review);
+
+
         Intent i = getIntent();
 
         final String firstName = i.getStringExtra("firstName");
@@ -28,10 +31,10 @@ public class ProfileReviewActivity extends AppCompatActivity {
         TextView txtEmail = findViewById(R.id.txtEmail);
         TextView txtAge = findViewById(R.id.txtAge);
 
-        txtFirstName.setText(firstName);
-        txtLastName.setText(lastName);
-        txtEmail.setText(email);
-        txtAge.setText(age);
+        txtFirstName.setText(String.format("First Name: %s", firstName));
+        txtLastName.setText(String.format("Last Name: %s", lastName));
+        txtEmail.setText(String.format("Email: %s", email));
+        txtAge.setText(String.format("Age: %s", age));
 
         Button btnConfirm = findViewById(R.id.btnConfirm);
         Button btnEdit = findViewById(R.id.btnEdit);
@@ -62,5 +65,12 @@ public class ProfileReviewActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i = new Intent(ProfileReviewActivity.this, ProfileActivity.class);
+        startActivity(i);
     }
 }

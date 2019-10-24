@@ -59,6 +59,7 @@ public class ProfileActivity extends AppCompatActivity {
                 i.putExtra("email", email);
                 i.putExtra("age", age);
                 startActivityForResult(i, 200);
+
             }
         });
     }

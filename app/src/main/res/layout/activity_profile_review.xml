@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBackground"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".ProfileReviewActivity">
@@ -12,42 +13,62 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
         android:text="@string/confirmation_text"
+        android:textColor="@color/colorBlack"
         android:textSize="20sp" />
 
     <TextView
         android:id="@+id/txtFirstName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
         android:text="@string/empty"
+        android:textColor="@color/colorBlack"
         android:textSize="20sp" />
 
     <TextView
         android:id="@+id/txtLastName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
         android:text="@string/empty"
+        android:textColor="@color/colorBlack"
         android:textSize="20sp" />
 
     <TextView
         android:id="@+id/txtEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
         android:text="@string/empty"
+        android:textColor="@color/colorBlack"
         android:textSize="20sp" />
 
     <TextView
         android:id="@+id/txtAge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
         android:text="@string/empty"
+        android:textColor="@color/colorBlack"
         android:textSize="20sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
         android:gravity="center"
-
         android:orientation="horizontal">
 
 
