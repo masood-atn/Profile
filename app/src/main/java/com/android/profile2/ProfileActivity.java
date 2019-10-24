@@ -41,6 +41,13 @@ public class ProfileActivity extends AppCompatActivity {
                 String email = edtEmail.getText().toString();
                 String age = edtAge.getText().toString();
 
+
+                if (firstName.isEmpty() || lastName.isEmpty() || email.isEmpty() || age.isEmpty()) {
+                    Toast.makeText(ProfileActivity.this, "Please fill in all fields.", Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+
                 Intent i = new Intent(ProfileActivity.this, ProfileReviewActivity.class);
                 i.putExtra("firstName", firstName);
                 i.putExtra("lastName", lastName);
