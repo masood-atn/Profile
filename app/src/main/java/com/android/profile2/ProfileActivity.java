@@ -41,9 +41,14 @@ public class ProfileActivity extends AppCompatActivity {
                 String email = edtEmail.getText().toString();
                 String age = edtAge.getText().toString();
 
-
+                // input validation
                 if (firstName.isEmpty() || lastName.isEmpty() || email.isEmpty() || age.isEmpty()) {
                     Toast.makeText(ProfileActivity.this, "Please fill in all fields.", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                EmailValidator emailValidator = new EmailValidator();
+                if (!emailValidator.isEmailValid(email)) {
+                    Toast.makeText(ProfileActivity.this, "Email is not valid.", Toast.LENGTH_LONG).show();
                     return;
                 }
 
