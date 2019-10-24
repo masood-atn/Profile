@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -38,8 +39,15 @@ public class ProfileReviewActivity extends AppCompatActivity {
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(ProfileReviewActivity.this, MainActivity.class);
-                startActivity(i);
+
+                Intent returnIntent = new Intent();
+                returnIntent.putExtra("firstName", firstName);
+                returnIntent.putExtra("lastName", lastName);
+                returnIntent.putExtra("email", email);
+                returnIntent.putExtra("age", age);
+                setResult(Activity.RESULT_OK, returnIntent);
+                finish();
+
             }
         });
         btnEdit.setOnClickListener(new View.OnClickListener() {
@@ -50,7 +58,7 @@ public class ProfileReviewActivity extends AppCompatActivity {
                 returnIntent.putExtra("lastName", lastName);
                 returnIntent.putExtra("email", email);
                 returnIntent.putExtra("age", age);
-                setResult(Activity.RESULT_OK, returnIntent);
+                setResult(Activity.RESULT_CANCELED, returnIntent);
                 finish();
             }
         });

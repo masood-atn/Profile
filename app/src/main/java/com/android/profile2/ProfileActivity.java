@@ -6,9 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -22,6 +24,13 @@ public class ProfileActivity extends AppCompatActivity {
         final EditText edtAge = findViewById(R.id.edtAge);
 
         Button btnReview = findViewById(R.id.btnReview);
+
+
+        edtFirstName.setText(PreferenceManager.getDefaultSharedPreferences(ProfileActivity.this).getString("firstName", "Empty"));
+        edtLastName.setText(PreferenceManager.getDefaultSharedPreferences(ProfileActivity.this).getString("lastName", "Empty"));
+        edtEmail.setText(PreferenceManager.getDefaultSharedPreferences(ProfileActivity.this).getString("email", "Empty"));
+        edtAge.setText(PreferenceManager.getDefaultSharedPreferences(ProfileActivity.this).getString("age", "0"));
+
 
         btnReview.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,7 +61,27 @@ public class ProfileActivity extends AppCompatActivity {
         final EditText edtAge = findViewById(R.id.edtAge);
 
         if (requestCode == 200) {
+
             if (resultCode == Activity.RESULT_OK) {
+
+                PreferenceManager.getDefaultSharedPreferences(ProfileActivity.this).
+                        edit().putString("firstName", data.getStringExtra("firstName")).apply();
+                PreferenceManager.getDefaultSharedPreferences(ProfileActivity.this).
+                        edit().putString("lastName", data.getStringExtra("lastName")).apply();
+                PreferenceManager.getDefaultSharedPreferences(ProfileActivity.this).
+                        edit().putString("email", data.getStringExtra("email")).apply();
+                PreferenceManager.getDefaultSharedPreferences(ProfileActivity.this).
+                        edit().putString("age", data.getStringExtra("age")).apply();
+
+                Toast.makeText(ProfileActivity.this, "Profile saved successfully.", Toast.LENGTH_LONG).show();
+                Intent i = new Intent(ProfileActivity.this, MainActivity.class);
+                startActivity(i);
+                finish();
+
+
+            }
+
+            if (resultCode == Activity.RESULT_CANCELED) {
 
                 String userFirstName = data.getStringExtra("firstName");
                 String userLastName = data.getStringExtra("lastName");
