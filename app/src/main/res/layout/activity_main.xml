@@ -58,8 +58,8 @@
 
         <Button
             android:id="@+id/btnProfile"
-            android:layout_width="120dp"
-            android:layout_height="70dp"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
             android:background="@color/colorBlue"
             android:text="@string/profile"
@@ -69,12 +69,34 @@
 
         <Button
             android:id="@+id/btnDial"
-            android:layout_width="120dp"
-            android:layout_height="70dp"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_margin="40dp"
+            android:layout_marginTop="20dp"
             android:background="@color/colorGreen"
             android:text="@string/dial"
+            android:textColor="#FFF"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btnCamera"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorGreen"
+            android:text="@string/camera"
+            android:textColor="#FFF"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btnPrayerTimes"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorGreen"
+            android:text="Prayer Times"
             android:textColor="#FFF"
             android:textSize="20sp" />
 

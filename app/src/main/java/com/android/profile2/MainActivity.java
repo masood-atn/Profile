@@ -13,7 +13,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.profile2.PrayerTimesData.PrayerTimes;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,25 +25,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        GetPrayerTimes get = new GetPrayerTimes();
+
+        System.out.println("Maghrib ");
+        System.out.println(get.getTimesByCity("tehran").Maghrib);
+
+
+
         Button btnProfile = findViewById(R.id.btnProfile);
         Button btnDial = findViewById(R.id.btnDial);
+        Button btnCamera = findViewById(R.id.btnCamera);
+        Button btnPrayerTimes = findViewById(R.id.btnPrayerTimes);
         final Button btnDrawer = findViewById(R.id.btnDrawer);
 
-        btnProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, ProfileActivity.class);
-                startActivity(i);
-            }
-        });
 
-        btnDial.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, DialActivity.class);
-                startActivity(i);
-            }
-        });
         btnDrawer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,5 +62,38 @@ public class MainActivity extends AppCompatActivity {
         RecyclerAdapter adapter = new RecyclerAdapter(list);
         recycler.setAdapter(adapter);
         recycler.setLayoutManager(new LinearLayoutManager(MainActivity.this, RecyclerView.HORIZONTAL, false));
+
+
+        btnProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, ProfileActivity.class);
+                startActivity(i);
+            }
+        });
+
+        btnDial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, DialActivity.class);
+                startActivity(i);
+            }
+        });
+
+        btnCamera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, CameraActivity.class);
+                startActivity(i);
+            }
+        });
+
+        btnPrayerTimes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, PrayerTimesActivity.class);
+                startActivity(i);
+            }
+        });
     }
 }
