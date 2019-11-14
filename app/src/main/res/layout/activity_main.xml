@@ -2,12 +2,12 @@
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:id="@+id/drawer_layout">
+    tools:context=".MainActivity">
 
 
     <LinearLayout
@@ -37,9 +37,9 @@
                 android:layout_width="120dp"
                 android:layout_height="70dp"
                 android:layout_gravity="center"
+                android:layout_marginTop="20dp"
                 android:background="@color/colorBlue"
                 android:text="@string/open_menu"
-                android:layout_marginTop="20dp"
                 android:textColor="#FFF"
                 android:textSize="20sp" />
 
@@ -61,9 +61,9 @@
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
+            android:layout_marginTop="20dp"
             android:background="@color/colorBlue"
             android:text="@string/profile"
-            android:layout_marginTop="20dp"
             android:textColor="#FFF"
             android:textSize="20sp" />
 
@@ -99,6 +99,29 @@
             android:text="Prayer Times"
             android:textColor="#FFF"
             android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btnMovieFinder"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorGreen"
+            android:text="Movie Finder"
+            android:textColor="#FFF"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btnLoadMoviesFromDB"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorGreen"
+            android:text="Load Movies"
+            android:textColor="#FFF"
+            android:textSize="20sp" />
+
 
     </LinearLayout>
 

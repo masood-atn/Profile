@@ -25,10 +25,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        GetPrayerTimes get = new GetPrayerTimes();
-
-        System.out.println("Maghrib ");
-        System.out.println(get.getTimesByCity("tehran").Maghrib);
 
 
 
@@ -36,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         Button btnDial = findViewById(R.id.btnDial);
         Button btnCamera = findViewById(R.id.btnCamera);
         Button btnPrayerTimes = findViewById(R.id.btnPrayerTimes);
+        Button btnMovieFinder = findViewById(R.id.btnMovieFinder);
+        Button btnLoadMoviesFromDB = findViewById(R.id.btnLoadMoviesFromDB);
         final Button btnDrawer = findViewById(R.id.btnDrawer);
 
 
@@ -92,6 +90,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, PrayerTimesActivity.class);
+                startActivity(i);
+            }
+        });
+        btnMovieFinder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, MovieFinderActivity.class);
+                startActivity(i);
+            }
+        });
+        btnLoadMoviesFromDB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, MovieLoaderActivity.class);
                 startActivity(i);
             }
         });

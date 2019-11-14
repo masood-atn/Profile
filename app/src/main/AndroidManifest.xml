@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PrayerTimesActivity"></activity>
+        <activity android:name=".MovieLoaderActivity"></activity>
+        <activity android:name=".MovieFinderActivity" />
+        <activity android:name=".PrayerTimesActivity" />
         <activity android:name=".CameraActivity" />
         <activity android:name=".DialActivity" />
         <activity android:name=".ProfileReviewActivity" />
