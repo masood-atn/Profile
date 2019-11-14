@@ -4,24 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     android:background="@color/colorBackground"
     android:orientation="vertical"
 
     >
-
-
-    <top.defaults.camera.CameraView
-        android:id="@+id/preview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:mode="video"
-        app:aspectRatio="4:3"
-        app:autoFocus="true"
-        app:facing="back"
-        app:fillSpace="false"
-        app:flash="auto"
-        app:pinchToZoom="false"
-        app:showFocusIndicator="true"/>
+    <com.camerakit.CameraKitView
+        android:id="@+id/camera"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:adjustViewBounds="true"
+        android:keepScreenOn="true"
+        app:camera_flash="auto"
+        app:camera_facing="back"
+        app:camera_focus="continuous"
+        app:camera_permissions="camera" />
+<Button
+    android:layout_width="wrap_content"
+    android:layout_gravity="center"
+    android:layout_height="wrap_content"
+    android:id="@+id/btnCamera"
+    android:text="Capture"/>
 
 
 </LinearLayout>
